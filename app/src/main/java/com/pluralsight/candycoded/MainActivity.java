@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 
 import com.pluralsight.candycoded.DB.CandyContract.CandyEntry;
 import com.pluralsight.candycoded.DB.CandyCursorAdapter;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(int statusCode, Header[] headers, String response) {
                         Log.d("AsyncHttpClient", "response = " + response);
                         Gson gson = new GsonBuilder().create();
+                        ;
                         candies = gson.fromJson(response, Candy[].class);
 
                         addCandiesToDatabase(candies);
@@ -81,12 +83,13 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main, menu);
         return true;
     }
+
     // ***
     // TODO - Task 1 - Show Store Information Activity
     // ***
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent infoIntent = new Intent(this,InfoActivity.class);
+        Intent infoIntent = new Intent(this, InfoActivity.class);
         startActivity(infoIntent);
         return super.onOptionsItemSelected(item);
     }

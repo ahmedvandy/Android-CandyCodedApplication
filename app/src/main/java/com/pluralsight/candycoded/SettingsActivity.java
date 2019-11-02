@@ -2,8 +2,7 @@ package com.pluralsight.candycoded;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-
-import androidx.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 
 public class SettingsActivity extends PreferenceActivity {
